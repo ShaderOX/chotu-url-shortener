@@ -32,8 +32,8 @@
           @foreach ($urls as $url)
             <tr class="border-b border-gray-700 bg-gray-800">
               <td scope="row" class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-200">
-                <a href="https://chotu/r/{{ $url->suffix }}">
-                  https://chotu/r/{{ $url->suffix }}
+                <a href="{{ env('APP_URL') }}/r/{{ $url->suffix }}">
+                  {{ env('APP_URL') }}/r/{{ $url->suffix }}
                 </a>
               </td>
               <td class="px-6 py-4 font-mono text-sm">

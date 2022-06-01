@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUsMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactUsController extends Controller
 {
@@ -19,6 +21,8 @@ class ContactUsController extends Controller
             'message' => 'required',
         ]);
 
-        dd(request()->all());
+        Mail::to('admin@chotu.com')->send(new ContactUsMail(request('name'), request('email'), request('message')));
+
+        return back()->with('flash', 'Thanks for contacting us!');
     }
 }

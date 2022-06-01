@@ -7,6 +7,9 @@ use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\Dashboard\MyURLs;
 use App\Http\Controllers\Dashboard\RegisterURL;
 use App\Http\Controllers\Redirector;
+use App\Mail\ContactUs;
+use App\Mail\ContactUsMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,5 +53,7 @@ Route::get('/plans', function () {
 })->name('plans');
 
 Route::get('/', function () {
+
+
     return view('home');
 })->name('home');
