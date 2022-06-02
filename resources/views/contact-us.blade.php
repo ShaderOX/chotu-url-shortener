@@ -4,11 +4,10 @@
   <x-navbar />
 
   @if (session('flash'))
+    <div class="z-10 mx-auto w-3/4 rounded p-5 text-center">
+      {{ session('flash') }}
+    </div>
   @endif
-  <div class="z-10 mx-auto w-3/4 rounded p-5 text-center">
-    {{-- {{ session('flash') }} --}}
-    Lorem, ipsum dolor.
-  </div>
 
   <section class="body-font relative bg-gray-900 text-gray-400">
     <div class="container mx-auto px-5 py-24">

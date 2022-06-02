@@ -15,7 +15,10 @@ class MyURLs extends Controller
 
     public function index()
     {
-        $urls = request()->user()->urls()->paginate(10);
+        $urls = request()->user()->urls()
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
 
         return view('dashboard.my-urls', [
             'urls' => $urls,

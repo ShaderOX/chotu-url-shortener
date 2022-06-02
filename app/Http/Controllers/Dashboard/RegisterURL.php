@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\UrlMapping;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class RegisterURL extends Controller
@@ -26,7 +27,11 @@ class RegisterURL extends Controller
             'suffix' => 'required|unique:url_mappings',
         ]);
 
-        request()->user()->urls()->create(request()->only('maps_to', 'suffix'));
+        request()->user()->urls()->create(array_merge(
+            request()->only('maps_to', 'suffix'),
+            ['expires_at' => Carbon::now()->addDays(14)]
+        ));
+
         return redirect()->route('my-urls')->with('status', 'URL registered successfully.');
     }
 

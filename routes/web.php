@@ -39,6 +39,8 @@ Route::get('/dashboard/my-urls', [MyURLs::class, 'index'])->name('my-urls');
 Route::get('/dashboard/register-url', [RegisterURL::class, 'index'])->name('register-url');
 Route::post('/dashboard/register-url', [RegisterURL::class, 'store']);
 Route::get('/dashboard/register-url/{id}', [RegisterURL::class, 'delete']);
+
+
 Route::get('/dashboard/query/{suffix}', [RegisterURL::class, 'query']);
 
 // Redirector 
@@ -53,7 +55,5 @@ Route::get('/plans', function () {
 })->name('plans');
 
 Route::get('/', function () {
-
-
     return view('home');
 })->name('home');

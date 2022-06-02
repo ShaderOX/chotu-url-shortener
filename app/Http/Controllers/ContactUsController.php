@@ -21,7 +21,9 @@ class ContactUsController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::to('admin@chotu.com')->send(new ContactUsMail(request('name'), request('email'), request('message')));
+        Mail::to('admin@chotu.com')->send(
+            new ContactUsMail(request('name'), request('email'), request('message'))
+        );
 
         return back()->with('flash', 'Thanks for contacting us!');
     }

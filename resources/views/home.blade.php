@@ -19,9 +19,9 @@
             <defs>
               <filter id="threshold">
                 <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
-                                                      0 1 0 0 0
-                                                      0 0 1 0 0
-                                                      0 0 0 255 -140" />
+                                      0 1 0 0 0
+                                      0 0 1 0 0
+                                      0 0 0 255 -140" />
               </filter>
             </defs>
           </svg>
@@ -32,12 +32,19 @@
         <h1 class="title-font mb-4 text-3xl font-medium text-white sm:text-4xl">
           <br class="hidden lg:inline-block">Tired of having to send out long URLs?
         </h1>
-        <p class="mb-8 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, ipsam.</p>
+        <p class="mb-8 leading-relaxed">
+          <span class="text-sm lowercase">
+            Short links,
+          </span>
+          <span class="text-lg font-semibold uppercase">
+            Big results.
+          </span>
+        </p>
         <div class="flex justify-center">
           <a href="#getting-started"
             class="inline-flex rounded border-0 bg-green-500 py-2 px-6 text-lg text-white hover:bg-green-600 focus:outline-none">Get
             Started</a>
-          <a href="{{ route('plans') }}"
+          <a href="plans.html"
             class="ml-4 inline-flex rounded border-0 bg-gray-800 py-2 px-6 text-lg text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none">View
             our plans</a>
         </div>
@@ -177,8 +184,8 @@
           </div>
           <div class="mt-6 flex-grow sm:mt-0 sm:pl-6">
             <h2 class="title-font mb-1 text-xl font-medium text-white">Register your custom URL</h2>
-            <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard
-              cliche palo santo offal.</p>
+            <p class="leading-relaxed">URL shortener built with powerful tools to help you grow and protect your brand.
+            </p>
           </div>
         </div>
       </div>
@@ -200,8 +207,7 @@
           </div>
           <div class="mt-6 flex-grow sm:mt-0 sm:pl-6">
             <h2 class="title-font mb-1 text-xl font-medium text-white">Manage your URLs</h2>
-            <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard
-              cliche palo santo offal.</p>
+            <p class="leading-relaxed">Gain control 💪🏿</p>
           </div>
         </div>
       </div>
@@ -223,8 +229,8 @@
           </div>
           <div class="mt-6 flex-grow sm:mt-0 sm:pl-6">
             <h2 class="title-font mb-1 text-xl font-medium text-white">Become a Premium Member</h2>
-            <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard
-              cliche palo santo offal.</p>
+            <p class="leading-relaxed">Your brand wasn’t built to be hidden. Help it stand out with branded links that
+              drive more clicks.</p>
           </div>
         </div>
       </div>

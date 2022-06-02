@@ -18,8 +18,8 @@ return new class extends Migration
             $table->id();
             $table->string('suffix')->unique();
             $table->string('maps_to');
+            $table->timestamp('expires_at');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->timestamp('expires_at')->default(Carbon::createFromTimestampUTC(time())->addSeconds(14 * 24 * 60 * 60));
             $table->timestamps();
         });
     }

@@ -12,6 +12,7 @@ class UrlMapping extends Model
     protected $fillable = [
         'suffix',
         'maps_to',
+        'expires_at',
     ];
 
     public function owner()

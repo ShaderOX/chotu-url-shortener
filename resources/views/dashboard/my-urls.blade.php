@@ -3,6 +3,12 @@
 @section('content')
   <x-navbar />
 
+  @if (session('status'))
+    <div class="z-10 mx-auto w-3/4 rounded p-5 text-center">
+      {{ session('status') }}
+    </div>
+  @endif
+
   <div class="relative mx-auto mt-5 w-3/4 overflow-x-auto shadow-md sm:rounded-lg">
     <div class="mb-10 text-center">
       <h1 class="title-font mb-4 text-center text-2xl font-medium text-white sm:text-4xl">
@@ -32,12 +38,12 @@
           @foreach ($urls as $url)
             <tr class="border-b border-gray-700 bg-gray-800">
               <td scope="row" class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-200">
-                <a href="{{ env('APP_URL') }}/r/{{ $url->suffix }}">
+                <a target="_blank" href="{{ env('APP_URL') }}/r/{{ $url->suffix }}">
                   {{ env('APP_URL') }}/r/{{ $url->suffix }}
                 </a>
               </td>
               <td class="px-6 py-4 font-mono text-sm">
-                <a href="{{ $url->maps_to }}">
+                <a target="_blank" href="{{ $url->maps_to }}">
                   {{ $url->maps_to }}
                 </a>
               </td>
@@ -48,7 +54,12 @@
                   $days = floor($diff / (60 * 60 * 24));
                   $hours = round(($diff - $days * 60 * 60 * 24) / (60 * 60));
                 @endphp
-                {{ $days }} days and {{ $hours }} hours left
+                @if ($days > 0)
+                  {{ $days }} days
+                @endif
+                @if ($hours > 0)
+                  {{ $hours }} hours left
+                @endif
               </td>
               <td class="px-6 py-4 text-right">
                 <a href="{{ route('register-url') }}/{{ $url->id }}"

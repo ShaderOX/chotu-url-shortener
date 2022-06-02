@@ -13,7 +13,7 @@
         <div class="relative">
           <div class="w-1/3">
             <label for="d-suffix" class="text-sm leading-7 text-gray-400">URL Suffix</label>
-            <input type="url" id="d-suffix" name="d-suffix" disabled value="{{ env('APP_URL') }}/"
+            <input type="url" id="d-suffix" name="d-suffix" disabled value="{{ env('APP_URL') }}/r/"
               class="w-full min-w-fit rounded border border-r-0 border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 font-mono text-xs leading-8 text-gray-400 outline-none transition-colors duration-200 ease-in-out">
           </div>
           <div class="absolute right-0 bottom-0 w-2/3">
